@@ -1,0 +1,51 @@
+/* global.css
+  This file contains our core design system: 
+  CSS Variables, global resets, and default styles.
+*/
+
+/* 1. CSS Custom Properties (Our Design System Variables) */
+:root {
+  /* Color Palette */
+  --color-bg-primary: #121212;   /* Obsidian */
+  --color-bg-secondary: #1E1E1E; /* Charcoal */
+  --color-text-primary: #EAEAEA;   /* Soft White */
+  --color-accent: #E000B3;       /* Electric Magenta */
+  --color-white: #FFFFFF;
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Lora', serif;
+
+  /* Spacing */
+  --spacing-unit: 8px;
+}
+
+/* 2. A Modern CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* This trick makes 1rem = 10px, simplifying sizing */
+  font-size: 62.5%; 
+}
+
+/* 3. Global Body Styles */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-size: 1.6rem; /* Sets default font size to 16px */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Improves font rendering */
+  -moz-osx-font-smoothing: grayscale; /* Improves font rendering */
+}
+
+/* 4. Global Typography Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700; /* Default to a bold weight for headings */
+  line-height: 1.2;
+}
