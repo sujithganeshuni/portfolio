@@ -1,0 +1,40 @@
+.footer {
+  padding: 40px 20px;
+  text-align: center;
+  /* Use the secondary background color to distinguish it */
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid #e0e0e0; /* A subtle top border for light mode */
+}
+
+/* This is a common CSS trick to make sure rules apply correctly
+   even when we change themes from light to dark. */
+[data-theme="dark"] .footer {
+  background-color: #061223;
+  border-top: 1px solid #1a2b42;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.socialLink {
+  color: var(--color-text-primary);
+  opacity: 0.7;
+  font-size: 28px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.socialLink:hover {
+  opacity: 1;
+  color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.copyright {
+  font-size: 1.4rem;
+  color: var(--color-text-primary);
+  opacity: 0.6;
+}
