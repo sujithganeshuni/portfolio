@@ -1,28 +1,25 @@
-// src/data/projects.js
-
-// Using a placeholder image service for now
-const placeholderImage = (width, height) => `https://placehold.co/${width}x${height}/E000B3/eaeaea?text=Project`;
+const placeholderImage = (width, height) => `https://placehold.co/${width}x${height}/1F2937/38BDF8?text=Project`;
 
 const projects = [
   {
     id: 1,
-    title: "AI-Powered Recommendation Engine",
-    description: "A deep learning model that provides personalized content recommendations, built with Python, TensorFlow, and integrated into a web app using a Flask API.",
-    tags: ["Python", "TensorFlow", "Flask", "React"],
+    title: "Sequence Labeling Using Generative Adversarial Networks",
+    description: "This work introduces a lightweight, adversarial sequence labeling framework that improves accuracy and consistency with minimal data and computation. It uses a tagger to predict labels and a checker to distinguish between true and predicted sequences, guiding the model through adversarial training. The approach achieves strong results on standard NLP benchmarks while being efficient and suitable for low-resource settings.",
+    tags: ["Python", "PyTorch", "Natural Language Processing (NLP)", "Adversarial Training", "Sequence Labeling"],
     image: placeholderImage(600, 400),
   },
   {
     id: 2,
-    title: "E-commerce MERN Platform",
-    description: "A full-stack e-commerce site featuring product listings, a shopping cart, user authentication, and a payment gateway, all built with the MERN stack.",
-    tags: ["MongoDB", "Express", "React", "Node.js"],
+    title: "Restaurant Management System",
+    description: "Developed a full-stack Restaurant Management System using the MERN stack that reduced order processing time by 40% through a real-time analytics dashboard. Implemented robust security with JWT-based authentication and role-based access control (RBAC) to protect application endpoints and ensure secure user access.",
+    tags: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "JWT", "RBAC"],
     image: placeholderImage(600, 400),
   },
   {
     id: 3,
-    title: "Real-time Data Visualization Dashboard",
-    description: "A dashboard that visualizes live-streaming data using D3.js and WebSockets. The backend pushes data, and the frontend renders it in interactive charts.",
-    tags: ["D3.js", "WebSockets", "Node.js", "CSS Grid"],
+    title: "Online News Classification Using Machine Learning",
+    description: "This project focuses on building a machine learning model to automatically classify online news articles into predefined categories based on their content. Using natural language processing techniques for text preprocessing and feature extraction, the system applies supervised learning algorithms to accurately predict the category of unseen news data. The project demonstrates the application of machine learning in automating content organization and enhancing information retrieval in digital news platforms.",
+    tags: ["Python", "Scikit-learn", "Machine Learning", "Text Classification", "Natural Language Processing (NLP)"],
     image: placeholderImage(600, 400),
   },
 ];

@@ -1,23 +1,16 @@
-/* global.css
-  This file contains our core design system: 
-  CSS Variables, global resets, and default styles.
-*/
-
-/* 1. CSS Custom Properties (Our Design System Variables) */
 :root {
-  /* Color Palette */
-  --color-bg-primary: #121212;   /* Obsidian */
-  --color-bg-secondary: #1E1E1E; /* Charcoal */
-  --color-text-primary: #EAEAEA;   /* Soft White */
-  --color-accent: #E000B3;        /* Vibrant Cobalt */
+  /* NEW "Cool Slate" Color Palette */
+  --color-bg-primary: #111827;    /* Very Dark Blue/Gray - "Slate" */
+  --color-bg-secondary: #1F2937;  /* Slightly Lighter Slate */
+  --color-text-primary: #E5E7EB;    /* Soft Off-White */
+  --color-accent: #38BDF8;        /* Bright Sky Blue */
   --color-white: #FFFFFF;
 
-
-  /* Typography */
+  /* Typography (no change) */
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Lora', serif;
 
-  /* Spacing */
+  /* Spacing (no change) */
   --spacing-unit: 8px;
 }
 

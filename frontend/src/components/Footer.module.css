@@ -3,7 +3,7 @@
   text-align: center;
   /* Use the secondary background color to distinguish it */
   background-color: var(--color-bg-secondary);
-  border-top: 1px solid #e0e0e0; /* A subtle top border for light mode */
+  border-top: 1px solid #374151; /* A subtle top border for light mode */
 }
 
 /* This is a common CSS trick to make sure rules apply correctly

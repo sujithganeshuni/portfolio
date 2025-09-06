@@ -1,44 +1,40 @@
-import React, { useState, useEffect, useRef } from 'react';
-import * as THREE from 'three'; // <-- 1. IMPORT THREE.JS
-import NET from 'vanta/dist/vanta.net.min';
+import React from 'react';
+import Particles from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import styles from './Hero.module.css';
+import particlesConfig from './particlesConfig';
 
 const Hero = () => {
-  const [vantaEffect, setVantaEffect] = useState(null);
-  const vantaRef = useRef(null);
+  const particlesInit = async (engine) => {
+    await loadSlim(engine);
+  };
 
-  useEffect(() => {
-    if (!vantaEffect && vantaRef.current) {
-      setVantaEffect(NET({
-        el: vantaRef.current,
-        THREE: THREE, // <-- 2. PASS THREE.JS TO VANTA
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: '#ffffff',
-        backgroundColor: '#0a192f',
-        points: 10.00,
-        maxDistance: 25.00,
-        spacing: 18.00
-      }));
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect]);
+  const [nameText] = useTypewriter({
+    words: ['Sujith Ganeshuni.'],
+    loop: true,
+    delaySpeed: 2000,
+  });
 
   return (
-    <section ref={vantaRef} className={styles.hero}>
+    <section className={styles.heroContainer}>
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={particlesConfig}
+        className={styles.particles}
+      />
       <div className={styles.heroContent}>
-        <h1 className={styles.title}>
-          Hi, I'm Sujith, a Software Engineer specializing in AI/ML & Full Stack Development.
+        <p className={styles.greeting}>Hi, my name is</p>
+        <h1 className={styles.name}>
+          {nameText}
+          <Cursor cursorColor='var(--color-accent)' />
         </h1>
-        <p className={styles.subtitle}>
-          I build intelligent and scalable web solutions that deliver exceptional user experiences.
+        <h2 className={styles.role}>
+          I'm a Software Engineer specializing in AI/ML & Full Stack Development.
+        </h2>
+        <p className={styles.intro}>
+          <b>I build intelligent and scalable web solutions that deliver exceptional user experiences.</b>
         </p>
         <button className={styles.ctaButton}>
           View My Work

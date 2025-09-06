@@ -1,0 +1,11 @@
+# Handle line endings automatically for files detected as text
+# and normalize them to LF in the repository.
+* text=auto
+
+# Explicitly declare text files you want to always be normalized
+*.js text
+*.jsx text
+*.css text
+*.html text
+*.json text
+*.md text

@@ -1,0 +1,69 @@
+/* src/pages/PortfolioPage.module.css */
+.portfolioContainer {
+  padding: 150px 20px 80px; /* More top padding to clear the header */
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.title, .subtitle {
+  text-align: center;
+}
+
+.title {
+  font-size: 4.8rem;
+  margin-bottom: var(--spacing-unit);
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  margin-bottom: calc(var(--spacing-unit) * 6);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-text-primary);
+  opacity: 0.8;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.filterButton {
+  padding: 10px 20px;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: 2px solid var(--color-accent);
+  border-radius: 30px;
+  background-color: transparent;
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterButton:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.filterButton.active {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: calc(var(--spacing-unit) * 4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
