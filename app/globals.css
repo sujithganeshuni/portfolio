@@ -44,3 +44,12 @@ html, body {
 .glow-pulse {
   animation: glowPulse 2.8s ease-in-out infinite;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.25s ease-out;
+}
