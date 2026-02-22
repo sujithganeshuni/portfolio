@@ -53,3 +53,41 @@ html, body {
 .fade-in {
   animation: fadeIn 0.25s ease-out;
 }
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #111111, #5B5FFF, #111111);
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+  background-clip:text;
+  -webkit-background-clip: text;
+  color:transparent;
+  -webkit-text-fill-color: transparent;
+}
+@keyframes heroGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.hero-name {
+  display: inline-block;
+
+  background: linear-gradient(
+    90deg,
+    #111111,
+    #5B5FFF,
+    #8C8CFF
+  );
+
+  background-size: 160% 160%;
+  animation: heroGradient 10s ease infinite;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}

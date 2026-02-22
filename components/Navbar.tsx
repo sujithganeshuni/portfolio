@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight hover:opacity-80 transition"
+          className="text-lg font-semibold tracking-tight gradient-text"
         >
           Sujith Ganeshuni
         </Link>

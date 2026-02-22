@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl space-y-6 fade-up">
           <h1 className="text-5xl font-semibold tracking-tight">
-            Hi, I&apos;m Sujith
+            Hi, I&apos;m <span className="hero-name">Sujith</span>
           </h1>
 
           <p className="text-lg text-[#6E6E73] leading-relaxed">
