@@ -25,10 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className="font-sans antialiased">
+        <div className="page-enter">
+          {children}
+        </div>
         <ScrollToTop />
       </body>
     </html>
