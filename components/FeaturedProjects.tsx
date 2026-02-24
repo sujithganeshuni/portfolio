@@ -1,39 +1,67 @@
 import Link from "next/link";
-import { projectPreviews } from "@/lib/projects";
+import { projects } from "@/lib/projects";
+import ProjectMedia from "@/components/ProjectMedia";
 
 export default function FeaturedProjects() {
+  const previewProjects = projects.slice(0, 2);
+
   return (
     <section className="py-24">
       <div className="max-w-6xl mx-auto fade-up">
+
         <div className="mb-12">
           <h2 className="text-3xl font-semibold tracking-tight">
             Selected Work
           </h2>
         </div>
 
-        <div className="space-y-10">
-          {projectPreviews.map((project) => (
+        <div className="grid grid-cols-2 gap-6">
+
+          {previewProjects.map((project) => (
             <Link
-              key={project.title}
+              key={project.id}
               href="/projects"
-              className="block group"
+              className="
+              rounded-2xl
+              p-6
+              backdrop-blur-md
+              bg-white/35
+              border border-black/5
+              hover:bg-white/55
+              hover:border-black/10
+              hover:-translate-y-[2px]
+              transition-all
+              duration-500
+              block
+              "
             >
-              <div className="space-y-1">
-                <div className="text-lg font-medium group-hover:text-[#5B5FFF] transition-colors">
+              <div className="space-y-4">
+
+                <h3 className="text-lg font-medium">
                   {project.title}
-                </div>
+                </h3>
 
-                <div className="text-sm text-[#6E6E73]">
-                  {project.summary}
-                </div>
+                <ProjectMedia media={project.media} />
 
-                <div className="text-sm text-[#6E6E73]">
-                  {project.tech}
-                </div>
+                <p className="text-xs text-[#6E6E73] leading-relaxed">
+                  {project.tagline}
+                </p>
+
               </div>
             </Link>
           ))}
+
         </div>
+
+        <div className="pt-10">
+          <Link
+            href="/projects"
+            className="text-sm text-[#6E6E73] hover:text-black transition-colors"
+          >
+            View All Projects
+          </Link>
+        </div>
+
       </div>
     </section>
   );
