@@ -2,21 +2,30 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const rateLimit = require('express-rate-limit');
 const connectDB = require('./config/db');
-const Message = require('./models/Message'); // <-- 1. IMPORT THE MODEL
+const Message = require('./models/Message');
 
 const app = express();
 connectDB();
 app.use(cors());
 app.use(express.json());
 
+// --- Rate Limiter: max 10 contact form submissions per 15 minutes per IP ---
+const contactLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests. Please try again in 15 minutes.' },
+});
+
 // --- API ROUTES ---
 app.get('/', (req, res) => {
   res.send('Backend server is running!');
 });
 
-// vvv 2. UPDATE THIS ENTIRE ROUTE vvv
-app.post('/api/contact', async (req, res) => {
+app.post('/api/contact', contactLimiter, async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
@@ -26,11 +35,7 @@ app.post('/api/contact', async (req, res) => {
     }
 
     // Create a new message instance using our model
-    const newMessage = new Message({
-      name,
-      email,
-      message,
-    });
+    const newMessage = new Message({ name, email, message });
 
     // Save the new message to the database
     await newMessage.save();
@@ -43,7 +48,6 @@ app.post('/api/contact', async (req, res) => {
     res.status(500).json({ error: 'Server error. Could not save message.' });
   }
 });
-// ^^^ 2. END OF UPDATED ROUTE ^^^
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

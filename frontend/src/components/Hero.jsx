@@ -1,11 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
+import { FaDownload } from 'react-icons/fa';
 import styles from './Hero.module.css';
 import particlesConfig from './particlesConfig';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   const particlesInit = async (engine) => {
     await loadSlim(engine);
   };
@@ -31,14 +35,23 @@ const Hero = () => {
           <Cursor cursorColor='var(--color-accent)' />
         </h1>
         <h2 className={styles.role}>
-          I'm a Software Engineer specializing in AI/ML & Full Stack Development.
+          I'm a Software Engineer specializing in AI/ML &amp; Full Stack Development.
         </h2>
         <p className={styles.intro}>
           <b>I build intelligent and scalable web solutions that deliver exceptional user experiences.</b>
         </p>
-        <button className={styles.ctaButton}>
-          View My Work
-        </button>
+        <div className={styles.ctaGroup}>
+          <button className={styles.ctaButton} onClick={() => navigate('/portfolio')}>
+            View My Work
+          </button>
+          <a
+            href="/Sujith_Ganeshuni_Resume.pdf"
+            download
+            className={styles.resumeButton}
+          >
+            <FaDownload /> Resume
+          </a>
+        </div>
       </div>
     </section>
   );

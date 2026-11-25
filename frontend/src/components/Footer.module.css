@@ -1,9 +1,8 @@
 .footer {
-  padding: 40px 20px;
+  padding: 50px 20px;
   text-align: center;
-  /* Use the secondary background color to distinguish it */
   background-color: var(--color-bg-secondary);
-  border-top: 1px solid #374151; /* A subtle top border for light mode */
+  border-top: 1px solid #374151;
 }
 
 /* This is a common CSS trick to make sure rules apply correctly
@@ -37,4 +36,12 @@
   font-size: 1.4rem;
   color: var(--color-text-primary);
   opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.credit {
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  opacity: 0.65;
+  font-family: var(--font-heading);
 }
